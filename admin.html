@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | Code Wise Institute</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="admin-body">
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="container">
+            <div class="logo">
+                <h1><span>Code</span> Wise</h1>
+                <p>Admin Panel</p>
+            </div>
+            <nav class="admin-nav">
+                <ul>
+                    <li><a href="index.html">Back to Site</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Login Section -->
+    <section class="admin-login">
+        <div class="container">
+            <div class="login-container">
+                <div class="login-header">
+                    <h2>Admin Login</h2>
+                    <p>Access the Code Wise Institute Admin Panel</p>
+                </div>
+                
+                <form id="adminLoginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn primary full-width">Login</button>
+                    </div>
+                    
+                    <div class="form-footer">
+                        <p><a href="#">Forgot Password?</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard (Hidden by default) -->
+    <section id="adminDashboard" class="admin-dashboard" style="display: none;">
+        <div class="container">
+            <div class="dashboard-header">
+                <h2>Admin Dashboard</h2>
+                <button id="logoutBtn" class="btn secondary">Logout</button>
+            </div>
+            
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Students</h3>
+                    <p class="count">1,248</p>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Courses</h3>
+                    <p class="count">7</p>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <h3>Enrollments</h3>
+                    <p class="count">892</p>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Revenue</h3>
+                    <p class="count">PKR 2.4M</p>
+                </div>
+            </div>
+            
+            <div class="dashboard-content">
+                <div class="dashboard-section">
+                    <h3>Recent Enrollments</h3>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Course</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Ahmed Khan</td>
+                                    <td>Web Development</td>
+                                    <td>2025-09-20</td>
+                                    <td><span class="status active">Active</span></td>
+                                    <td><button class="btn small">View</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Sana Malik</td>
+                                    <td>Digital Marketing</td>
+                                    <td>2025-09-19</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                    <td><button class="btn small">View</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Usman Siddiqui</td>
+                                    <td>AI & ChatGPT Training</td>
+                                    <td>2025-09-18</td>
+                                    <td><span class="status active">Active</span></td>
+                                    <td><button class="btn small">View</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Fatima Rizvi</td>
+                                    <td>Graphic Design</td>
+                                    <td>2025-09-17</td>
+                                    <td><span class="status completed">Completed</span></td>
+                                    <td><button class="btn small">View</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="dashboard-section">
+                    <h3>Manage Courses</h3>
+                    <div class="course-management">
+                        <div class="course-card">
+                            <h4>Web Development</h4>
+                            <p>4 Months</p>
+                            <div class="course-actions">
+                                <button class="btn small secondary">Edit</button>
+                                <button class="btn small danger">Delete</button>
+                            </div>
+                        </div>
+                        
+                        <div class="course-card">
+                            <h4>Digital Marketing</h4>
+                            <p>4 Months</p>
+                            <div class="course-actions">
+                                <button class="btn small secondary">Edit</button>
+                                <button class="btn small danger">Delete</button>
+                            </div>
+                        </div>
+                        
+                        <div class="course-card">
+                            <h4>AI & ChatGPT Training</h4>
+                            <p>3 Months</p>
+                            <div class="course-actions">
+                                <button class="btn small secondary">Edit</button>
+                                <button class="btn small danger">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn primary" id="addCourseBtn">
+                        <i class="fas fa-plus"></i> Add New Course
+                    </button>
+                </div>
+                
+                <!-- Admission Form Section -->
+                <div class="dashboard-section">
+                    <h3>Admission Form Submissions</h3>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Student Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Course</th>
+                                    <th>Date Submitted</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Ahmed Khan</td>
+                                    <td>ahmed@example.com</td>
+                                    <td>+92 300 1234567</td>
+                                    <td>Web Development</td>
+                                    <td>2025-09-20</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                    <td>
+                                        <button class="btn small secondary view-admission">View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Sana Malik</td>
+                                    <td>sana@example.com</td>
+                                    <td>+92 300 7654321</td>
+                                    <td>Digital Marketing</td>
+                                    <td>2025-09-19</td>
+                                    <td><span class="status active">Reviewed</span></td>
+                                    <td>
+                                        <button class="btn small secondary view-admission">View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Usman Siddiqui</td>
+                                    <td>usman@example.com</td>
+                                    <td>+92 300 1122334</td>
+                                    <td>AI & ChatGPT Training</td>
+                                    <td>2025-09-18</td>
+                                    <td><span class="status completed">Accepted</span></td>
+                                    <td>
+                                        <button class="btn small secondary view-admission">View</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Admission Form Modal (Hidden by default) -->
+                <div id="admissionModal" class="modal" style="display: none;">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Admission Form Details</h3>
+                            <span class="close-modal">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="admission-details">
+                                <div class="detail-row">
+                                    <span class="label">Name:</span>
+                                    <span class="value" id="studentName">Ahmed Khan</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Email:</span>
+                                    <span class="value" id="studentEmail">ahmed@example.com</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Phone:</span>
+                                    <span class="value" id="studentPhone">+92 300 1234567</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Course:</span>
+                                    <span class="value" id="studentCourse">Web Development</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Date Submitted:</span>
+                                    <span class="value" id="submissionDate">2025-09-20</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Message:</span>
+                                    <span class="value" id="studentMessage">I'm interested in joining the Web Development course.</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Status:</span>
+                                    <select id="admissionStatus">
+                                        <option value="pending">Pending</option>
+                                        <option value="reviewed">Reviewed</option>
+                                        <option value="accepted">Accepted</option>
+                                        <option value="rejected">Rejected</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn secondary" id="closeModalBtn">Close</button>
+                            <button class="btn primary" id="saveAdmissionBtn">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "codewise-institute",
+  "version": "1.0.0",
+  "description": "Code Wise Institute - Professional Training & Development",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "education",
+    "training",
+    "institute",
+    "courses",
+    "web-development"
+  ],
+  "author": "Code Wise Institute",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
